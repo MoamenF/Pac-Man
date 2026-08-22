@@ -1,7 +1,7 @@
 'use strict'
 
 const WALL = '#'
-const FOOD = '.'
+const FOOD = '●'
 const SUPERFOOD = 'S'
 const CHERRY = 'C'
 const EMPTY = ' '
@@ -18,6 +18,8 @@ var gBoard
 var gFoodCount = 0
 var gCherryInterval
 
+var gBgAudio
+
 
 
 function onInit() {
@@ -30,6 +32,8 @@ function onInit() {
     renderBoard(gBoard, '.board-container')
     randCherrySpawn()
     gGame.isOn = true
+    bgAudio('PacMan')
+
     console.log('gFoodCount:', gFoodCount)
 }
 
@@ -168,4 +172,21 @@ function onPause(elBtn) {
         elBtn.innerText = 'Resume'
         console.log('gGame.isOn:', gGame.isOn)
     }
+}
+
+
+function onMute(elBtn) {
+    gBgAudio.muted = !gBgAudio.muted
+
+    if (gBgAudio.muted) elBtn.innerText = 'UnMute'
+    if (!gBgAudio.muted) elBtn.innerText = 'Mute'
+}
+
+
+function bgAudio(musicName) {
+
+   gBgAudio = new Audio(`audio/${musicName}.mp3`)
+    gBgAudio.volume = 0.05
+    gBgAudio.loop = true
+    gBgAudio.play()
 }
