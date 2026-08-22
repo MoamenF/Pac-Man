@@ -1,11 +1,11 @@
 
 @font-face {
-  font-family: 'press start k';
-  src: url('...font/prstartk.ttf');
+  font-family: 'Pacman-Font';
+  src: url('../font/prstartk.ttf');
 }
 
 body {
-  font-family: 'press start k';
+  font-family: 'Pacman-Font';
   background-color: black;
   color:rgb(217, 200, 125);
   text-align: center;
