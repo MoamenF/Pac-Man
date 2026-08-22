@@ -116,9 +116,14 @@ function randCherrySpawn() {
 
 function checkVictory() {
     if (gFoodCount === 0) {
-        const elModal = document.querySelector('.modal h1').innerText = 'YOU WON!'
-        gameOver()
-    }
+        gGame.isOn = false
+        clearInterval(gGhostsInterval)
+        gGhostsInterval = null
+        clearInterval(gCherryInterval)
+        const elModalH1 = document.querySelector('.modal h1').innerText = 'YOU WON!'
+        const elModal = document.querySelector('.modal').hidden = false
+
+    } else return
 }
 
 
@@ -134,6 +139,8 @@ function resetScore() {
 
 function onNewGame() {
     const elModal = document.querySelector('.modal').hidden = true
+    gBgAudio.pause()
+    gBgAudio.currentTime = 0
     onInit()
 }
 
@@ -144,6 +151,7 @@ function gameOver() {
     gGhostsInterval = null
     clearInterval(gCherryInterval)
     renderCell(gPacman.location, EMPTY)
+    const elModalHi = document.querySelector('.modal h1').innerText = 'GAME OVER!'
     const elModal = document.querySelector('.modal').hidden = false
 }
 
