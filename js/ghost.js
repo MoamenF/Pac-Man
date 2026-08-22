@@ -11,7 +11,7 @@ const BlueGHOST_IMG = '<img class="cell-img" src="img/blueGhost.png">'
 const ScaredGHOST_IMG = '<img class="cell-img" src="img/scaredGhost.png">'
 
 var gGhosts = []
-var gIntervalGhosts
+var gGhostsInterval
 
 
 function createGhost(board, location, color) {
@@ -51,7 +51,6 @@ function createGhosts(board) {
     }
 
     console.log('gGhosts:', gGhosts)
-    gIntervalGhosts = setInterval(moveGhosts, 2000)
 }
 
 

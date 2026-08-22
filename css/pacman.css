@@ -75,10 +75,6 @@ table {
     display: none;
 }
 
-/* .cell span {
-  color: #5DCD83;
-} */
-
 
 .cell-img {
   width: 100%;
@@ -148,4 +144,18 @@ table {
   background-color: #c19505;
   width: 70px;
   height: 70px;
+}
+
+.start-msg {
+  color: black;
+  background-color: rgb(137, 117, 35);
+  font-size: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  width: fit-content;
+  position: fixed;
+  top: 28%;
+  left: 27%;
+  transform: (-50%, -50%);
+
 }

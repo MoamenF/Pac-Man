@@ -32,8 +32,6 @@ function onInit() {
     randCherrySpawn()
     gGame.isOn = true
     bgAudio('PacMan')
-
-    console.log('gFoodCount:', gFoodCount)
 }
 
 function buildBoard() {
@@ -142,7 +140,8 @@ function onNewGame() {
 function gameOver() {
     console.log('Game Over')
     gGame.isOn = false
-    clearInterval(gIntervalGhosts)
+    clearInterval(gGhostsInterval)
+    gGhostsInterval = null
     clearInterval(gCherryInterval)
     renderCell(gPacman.location, EMPTY)
     const elModal = document.querySelector('.modal').hidden = false
@@ -150,7 +149,8 @@ function gameOver() {
 
 function onRestart() {
     gGame.isOn = false
-    clearInterval(gIntervalGhosts)
+    clearInterval(gGhostsInterval)
+    gGhostsInterval = null
     clearInterval(gCherryInterval)
     gBgAudio.pause()
     gBgAudio.currentTime = 0
@@ -159,7 +159,7 @@ function onRestart() {
 
 function onPause(elBtn) {
     if (!gGame.isOn){
-        gIntervalGhosts = setInterval(moveGhosts, 2000)
+        gGhostsInterval = setInterval(moveGhosts, 2000)
         randCherrySpawn()
 
         gGame.isOn = true
@@ -167,7 +167,7 @@ function onPause(elBtn) {
         console.log('gGame.isOn:', gGame.isOn)
 
     } else {
-        clearInterval(gIntervalGhosts)
+        clearInterval(gGhostsInterval)
         clearInterval(gCherryInterval)
         gGame.isOn = false
         elBtn.innerText = 'Resume'

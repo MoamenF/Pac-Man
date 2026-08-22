@@ -30,11 +30,17 @@ function createPacman(board) {
 function movePacman(ev) {
     if (!gGame.isOn) return
 
+    if (gBgAudio.paused) gBgAudio.play()
+    if (!gGhostsInterval) {
+        gGhostsInterval = setInterval(moveGhosts, 1000)
+    }
+
     var direction = typeof ev === 'string' ? ev : ev.code
 
     var nextLocation = getNextLocation(direction)
 
     if (!nextLocation) return
+    var elStartMsg = document.querySelector('.start-msg').hidden = true
 
     var nextCell = gBoard[nextLocation.i][nextLocation.j]
 
