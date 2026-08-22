@@ -1,0 +1,144 @@
+body {
+  font-family: press start k;
+  background-color: black;
+  color:rgb(217, 200, 125);
+  text-align: center;
+}
+
+table {
+  margin: auto;
+  /* border-collapse: collapse;
+  border-spacing: 0; */
+}
+
+.cell {
+  width: 32px;
+  height: 32px;
+  /* padding: 0; */
+  text-align: center;
+  font-size: 1.5em;
+  
+}
+
+.formLine {
+  margin:10px;
+  padding:10px;
+  border:10px solid blue;
+  /* background-color: cornflowerblue; */
+}
+
+.modal {
+    background-color: rgb(4, 14, 34);
+    padding: 20px;
+    width: 400px;
+    border: 6px rgb(222, 237, 247) solid;
+    border-radius: 10px;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.modal h1 {
+    font-size: 22px;
+    color: white;
+    margin: auto;
+}
+
+
+/* .modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+} */
+
+.modal button {
+    font-family: press start k;
+    font-size: 16px;
+    margin-top: 20px;
+    width: auto;
+    height: 50px;
+    padding: 15px;
+    background: linear-gradient(
+        to bottom,
+        #f2e3af,
+        #c19505
+    );
+    border-radius: 5px;
+}
+
+
+.hide {
+    display: none;
+}
+
+/* .cell span {
+  color: #5DCD83;
+} */
+
+
+.cell-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* display: block; */
+}
+
+.flash {
+  animation: flash 0.5s infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo-img {
+  margin-top: 30px;
+}
+
+.res-pause {
+  /* font-family: press start k; */
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  
+}
+
+.game-btn {
+  font-family: press start k;
+  background-color: #c19505;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+}
+
+
+.movement-buttons {
+  margin-top: 60px;
+}
+
+.sec-movement-buttons {
+  margin-top: 20px;
+}
+
+.move-button {
+  font-family: press start k;
+  font-size: 40px;
+  border-radius: 5px;
+  background-color: #c19505;
+  width: 70px;
+  height: 70px;
+}
