@@ -17,7 +17,6 @@ var gGame = {
 var gBoard
 var gFoodCount = 0
 var gCherryInterval
-
 var gBgAudio
 
 
@@ -153,6 +152,8 @@ function onRestart() {
     gGame.isOn = false
     clearInterval(gIntervalGhosts)
     clearInterval(gCherryInterval)
+    gBgAudio.pause()
+    gBgAudio.currentTime = 0
     onInit()
 }
 
@@ -183,10 +184,9 @@ function onMute(elBtn) {
 }
 
 
-function bgAudio(musicName) {
-
-   gBgAudio = new Audio(`audio/${musicName}.mp3`)
-    gBgAudio.volume = 0.05
+function bgAudio(audioName) {
+   gBgAudio = new Audio(`audio/${audioName}.mp3`)
+    gBgAudio.volume = 0.03
     gBgAudio.loop = true
     gBgAudio.play()
 }
