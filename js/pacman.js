@@ -6,6 +6,8 @@ const PacManUP_IMG = '<img class="cell-img" src="img/pacmanUp.png">'
 const PacManDOWN_IMG = '<img class="cell-img" src="img/pacmanDown.png">'
 const PacManLEFT_IMG = '<img class="cell-img" src="img/pacmanLeft.png">'
 const PacManRIGHT_IMG = '<img class="cell-img" src="img/pacmanRight.png">'
+const PacManClosed_IMG = '<img class="cell-img" src="img/pacmanClose.png">'
+
 
 var gPacman;
 var gVanishedGhosts = []
@@ -142,15 +144,14 @@ function getNextLocation(direction) {
 }
 
 
+function pacmanMouth() {
+    var isOpen = true
 
+    gPacmanMouthInterval = setInterval (() => {
+        isOpen = !isOpen
 
-// function pacmanMouth() {
-//     var isOpen = true
-
-//     gPacmanMouthInterval = setInterval (() => {
-//         isOpen = !isOpen
-
+        var pacmanAnimation = (isOpen) ? gPacmanDirection : PacManClosed_IMG
+        renderCell(gPacman.location, pacmanAnimation)
         
-
-//     }, 200)
-// }
+    }, 200)
+}

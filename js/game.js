@@ -22,7 +22,6 @@ var gBgAudio
 
 
 function onInit() {
-    
     resetScore()
     gFoodCount = 0
     gBoard = buildBoard()
@@ -32,6 +31,7 @@ function onInit() {
     randCherrySpawn()
     gGame.isOn = true
     bgAudio('PacMan')
+    pacmanMouth()
 }
 
 function buildBoard() {

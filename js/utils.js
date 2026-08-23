@@ -53,10 +53,10 @@ function renderCell(location, value) {
 }
 
 
-// function getClassName(location) { // {i:2,j:5}
-//     const cellClass = `.cell-${location.i}-${location.j}` // 'cell-2-5'
-//     return cellClass
-// }
+function getClassName(location) { // {i:2,j:5}
+    const cellClass = `.cell-${location.i}-${location.j}` // 'cell-2-5'
+    return cellClass
+}
 
 
 function getRandomIntInclusive(min, max) {
