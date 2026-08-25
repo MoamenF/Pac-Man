@@ -4,6 +4,11 @@
   src: url('../font/prstartk.ttf');
 }
 
+.board-container {
+  background-color: rgb(21, 21, 21);
+  padding: 10px;
+}
+
 body {
   font-family: 'Pacman-Font';
   background-color: black;
