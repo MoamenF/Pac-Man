@@ -61,10 +61,10 @@ function buildBoard() {
             if (
                 (i === 0 || i === SIZE - 1 ||
                 j === 0 || j === SIZE - 1 ||
-                (j === 3 && i > 4 && i < SIZE - 3) || 
+                (j === 3 && i > 5 && i < SIZE - 3) || 
                 (i === 3 && j > 1 && j < SIZE - 8) || 
-                (i === 3 && j > 4 && j < SIZE - 3) || 
-                (i === 8 && j > 3 && j < SIZE - 5) ||
+                (i === 3 && j > 5 && j < SIZE - 3) || 
+                (i === 8 && j > 3 && j < SIZE - 6) ||
                 (i === 6 && j > 5 && j < SIZE - 4) ||
                 (i === 8 && j > 7 && j < SIZE - 2)) 
                 &&
@@ -162,6 +162,8 @@ function onRestart() {
     clearInterval(gCherryInterval)
     gBgAudio.pause()
     gBgAudio.currentTime = 0
+    if (gBgAudio.muted) document.querySelector('.mute-button').innerText = 'Mute'
+
     onInit()
 }
 

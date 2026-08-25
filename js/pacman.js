@@ -45,6 +45,7 @@ function movePacman(ev) {
     var elStartMsg = document.querySelector('.start-msg').hidden = true
 
     var nextCell = gBoard[nextLocation.i][nextLocation.j]
+        // console.log('nextCell:', nextCell)
 
     if (nextCell === WALL) return
 
@@ -76,12 +77,12 @@ function movePacman(ev) {
     } else if ((nextCell === redGHOST || nextCell === pinkGHOST || nextCell === blueGHOST)) {
         if (gPacman.isSuper) {
             for (var i = 0; i < gGhosts.length; i++) {
-                const vanishedGhost = gGhosts.splice(i, 1)[0]
-                checkGhostCellContent(vanishedGhost) //after SR
-                gVanishedGhosts.push(vanishedGhost)
-
-                // const ghost = gGhosts[i]
-                // gVanishedGhosts.push(gGhosts.splice(i, 1)[0])
+                var currLocation = gGhosts[i].location
+                if (currLocation.i === nextLocation.i && currLocation.j === nextLocation.j) {
+                    const vanishedGhost = gGhosts.splice(i, 1)[0]
+                    checkGhostCellContent(vanishedGhost) //after SR
+                    gVanishedGhosts.push(vanishedGhost)
+                }
             }  
 
         } else {

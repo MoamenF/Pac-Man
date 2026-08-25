@@ -26,6 +26,13 @@ function createGhost(board, location, color) {
 
 
 function respawnGhosts() {
+    var jLocation = 4
+    console.log('gVanishedGhosts:', gVanishedGhosts)
+    for ( i = 0; i < gVanishedGhosts.length; i++) {
+        const currGhost = gVanishedGhosts[i]
+        currGhost.location = { i: 5, j: jLocation++ }
+    }
+
     for (var i = gVanishedGhosts.length - 1; i < gVanishedGhosts.length && i >= 0; i--) {
         gGhosts.push(gVanishedGhosts.splice(i, 1)[0])
     }
@@ -80,7 +87,7 @@ function moveGhost(ghost) {
                 for (var i = 0; i < gGhosts.length; i++) {
                     var currLocation = gGhosts[i].location
                     const vanishedGhost = gGhosts.splice(i, 1)[0]
-                    checkGhostCellContent(vanishedGhost)
+                    checkGhostCellContent(vanishedGhost) // after SR
                     gVanishedGhosts.push(vanishedGhost)
                 }
 
